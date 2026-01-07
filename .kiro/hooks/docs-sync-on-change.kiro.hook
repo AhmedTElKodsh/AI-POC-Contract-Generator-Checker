@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Auto-Update Docs on Source Changes",
+  "description": "Monitors Python source files (*.py), configuration files (config.py, requirements.txt), and YAML templates for changes. When any of these files are edited, asks the agent to review the changes and update the README.md or curriculum documentation accordingly to keep docs in sync with code.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.py",
+      "config.py",
+      "requirements.txt",
+      "shared/data/templates/*.yaml"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the changes made to the source files and update the documentation accordingly. Check if README.md needs updates for any API changes, new features, or modified functionality. If there's a curriculum/ or docs/ folder, update relevant documentation there as well. Ensure all documentation accurately reflects the current codebase."
+  }
+}
