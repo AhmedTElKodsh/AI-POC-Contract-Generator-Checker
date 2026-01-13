@@ -8,6 +8,7 @@ from datetime import datetime
 sys.path.append(os.getcwd())
 
 from src.parser.pdf_parser import PDFParser
+from src.parser.docx_parser import DocxParser
 from src.knowledge.simple_kb import SimpleKnowledgeBase
 from src.generator.simple_generator import SimpleGenerator
 from src.models.generation import ProposalContext
@@ -18,14 +19,12 @@ st.set_page_config(page_title="ICON AI-Proposal Engine", layout="wide", page_ico
 st.title("🏗️ ICON AI-Proposal Engine")
 st.markdown("""
 This tool uses a **3-Phase RAG Workflow** to generate engineering proposals.
-1. **Ingest**: Extract data from PDF.
+1. **Ingest**: Extract data from PDF/DOCX.
 2. **Enrich**: Verify Knowledge Base (RAG) results.
 3. **Generate**: Create the final Word document.
 """)
 
 # --- SESSION STATE INITIALIZATION ---
-# We use session_state to maintain the "ProposalContext" across re-runs.
-# This is our 'Game State' as per Cloud Dragonborn's architecture.
 if 'context' not in st.session_state:
     st.session_state.context = None
 if 'found_terms' not in st.session_state:
@@ -36,23 +35,38 @@ if 'step' not in st.session_state:
 # --- SIDEBAR: FILE UPLOAD ---
 with st.sidebar:
     st.header("1. Upload Request")
-    uploaded_file = st.file_uploader("Upload Client RFP or Project Description (PDF)", type="pdf")
+    uploaded_file = st.file_uploader("Upload Client RFP (PDF or DOCX)", type=["pdf", "docx"])
     
     if uploaded_file:
         if st.button("🚀 Start Processing"):
-            # Save uploaded bytes to a temporary file for the parser
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+            # Determine file extension
+            file_ext = os.path.splitext(uploaded_file.name)[1].lower()
+            
+            # Save uploaded bytes to a temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as tmp:
                 tmp.write(uploaded_file.getvalue())
                 tmp_path = tmp.name
             
-            with st.spinner("Parsing PDF..."):
-                parser = PDFParser()
-                # PHASE 1: Initial Ingestion
-                st.session_state.context = parser.parse_file(tmp_path)
-                st.session_state.step = 1
-            
-            os.unlink(tmp_path) # Clean up temp file
-            st.success("PDF Parsed Successfully!")
+            with st.spinner(f"Parsing {file_ext.upper()}..."):
+                try:
+                    if file_ext == ".pdf":
+                        parser = PDFParser()
+                    elif file_ext == ".docx":
+                        parser = DocxParser()
+                    else:
+                        st.error("Unsupported file format.")
+                        parser = None
+
+                    if parser:
+                        # PHASE 1: Initial Ingestion
+                        st.session_state.context = parser.parse_file(tmp_path)
+                        st.session_state.step = 1
+                        st.success("File Parsed Successfully!")
+                except Exception as e:
+                    st.error(f"Error parsing file: {e}")
+                finally:
+                    if os.path.exists(tmp_path):
+                        os.unlink(tmp_path) # Clean up
 
     st.divider()
     if st.button("🧹 Clear All"):
