@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh w16kcm" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16kcm="http://schemas.microsoft.com/office/word/2018/wordml/kcm" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdh" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml/main">
+  <w:body>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:t>Civil Engineering Proposal</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:i/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:i/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>{{ project_title }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Client:</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t xml:space="preserve"> {{ client_name }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Date:</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t xml:space="preserve"> {{ proposal_date }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Executive Summary</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ executive_summary }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Project Scope</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ project_scope }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Technical Approach</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ technical_approach }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Timeline</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ timeline }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Budget</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ budget }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:spacing w:before="240" w:after="240"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+        </w:rPr>
+        <w:t>Deliverables</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ deliverables }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:jc w:val="right"/>
+        <w:spacing w:before="480"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ company_name }}</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="008F235F" w:rsidRDefault="008F235F" w:rsidP="008F235F">
+      <w:pPr>
+        <w:jc w:val="right"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>
+        </w:rPr>
+        <w:t>{{ company_address }}</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="008F235F" w:rsidSect="008F235F">
+      <w:pgSz w:w="11900" w:h="16840"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="720" w:footer="720" w:gutter="0"/>
+      <w:cols w:space="720"/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

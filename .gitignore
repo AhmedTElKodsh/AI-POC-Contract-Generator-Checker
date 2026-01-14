@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+document_processing.log
+output.log
+
+# Database
+*.db
+*.sqlite
+processing_tracker.db
+chroma_db/
+
+# Temporary files
+tmp/
+*.tmp
+tmpclaude-*
+nul
+$null
+
+# Test outputs
+test_output.txt
+snapshots/
+
+# Large files
+poppler-24.08.0/
+poppler.zip
+
+# Backups
+*.backup
+*.backup-*
+
+# Environment
+.env
+.env.local
+
+# Cache
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Output directories
+_bmad-output/
+proposals/*.docx
+Reports/
+
+# Keep structure
+!proposals/.gitkeep
+!templates/.gitkeep

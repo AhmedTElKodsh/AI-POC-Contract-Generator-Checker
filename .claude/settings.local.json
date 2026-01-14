@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(bmad:bmm:workflows:create-architecture)",
+      "WebSearch",
+      "Bash(file:*)",
+      "Skill(bmad:bmm:agents:architect)",
+      "Bash(find:*)"
+    ]
+  }
+}

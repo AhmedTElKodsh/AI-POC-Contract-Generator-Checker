@@ -82,7 +82,7 @@ class DocxParser:
                 scope_content = parts[1]
                 # Stop at the next likely header (e.g., "3. Deliverables")
                 # We look for a newline followed by a digit and a dot
-                scope_match = re.split(r"\n\d+\", scope_content)
+                scope_match = re.split(r"\n\d+\.", scope_content)
                 sections["scope"] = scope_match[0].strip()
         
         if "scope" not in sections:

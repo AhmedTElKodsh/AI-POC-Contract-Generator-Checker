@@ -1,0 +1,9 @@
+# Streamlit deployment requirements (lightweight)
+streamlit>=1.30.0
+python-docx>=1.1.0
+docxtpl>=0.16.0
+sentence-transformers>=2.3.0
+langdetect>=1.0.9
+numpy>=1.26.0
+pandas>=2.1.0
+Pillow>=10.0.0

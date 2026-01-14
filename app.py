@@ -7,7 +7,7 @@ from datetime import datetime
 # Ensure project modules are importable
 sys.path.append(os.getcwd())
 
-from src.parser.pdf_parser import PDFParser
+# Import only DOCX parser (no PDF/OCR needed for POC)
 from src.parser.docx_parser import DocxParser
 from src.knowledge.simple_kb import SimpleKnowledgeBase
 from src.generator.simple_generator import SimpleGenerator
@@ -19,7 +19,7 @@ st.set_page_config(page_title="ICON AI-Proposal Engine", layout="wide", page_ico
 st.title("🏗️ ICON AI-Proposal Engine")
 st.markdown("""
 This tool uses a **3-Phase RAG Workflow** to generate engineering proposals.
-1. **Ingest**: Extract data from PDF/DOCX.
+1. **Ingest**: Extract data from DOCX documents.
 2. **Enrich**: Verify Knowledge Base (RAG) results.
 3. **Generate**: Create the final Word document.
 """)
@@ -35,35 +35,27 @@ if 'step' not in st.session_state:
 # --- SIDEBAR: FILE UPLOAD ---
 with st.sidebar:
     st.header("1. Upload Request")
-    uploaded_file = st.file_uploader("Upload Client RFP (PDF or DOCX)", type=["pdf", "docx"])
+    uploaded_file = st.file_uploader("Upload Client RFP (DOCX format)", type=["docx"])
+    st.caption("📝 DOCX format ensures reliable text extraction without OCR")
     
     if uploaded_file:
         if st.button("🚀 Start Processing"):
-            # Determine file extension
-            file_ext = os.path.splitext(uploaded_file.name)[1].lower()
-            
-            # Save uploaded bytes to a temporary file
-            with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as tmp:
+            # Save uploaded DOCX to temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp:
                 tmp.write(uploaded_file.getvalue())
                 tmp_path = tmp.name
             
-            with st.spinner(f"Parsing {file_ext.upper()}..."):
+            with st.spinner("Parsing DOCX file..."):
                 try:
-                    if file_ext == ".pdf":
-                        parser = PDFParser()
-                    elif file_ext == ".docx":
-                        parser = DocxParser()
-                    else:
-                        st.error("Unsupported file format.")
-                        parser = None
-
-                    if parser:
-                        # PHASE 1: Initial Ingestion
-                        st.session_state.context = parser.parse_file(tmp_path)
-                        st.session_state.step = 1
-                        st.success("File Parsed Successfully!")
+                    # Use DOCX parser (no OCR needed!)
+                    parser = DocxParser()
+                    
+                    # PHASE 1: Initial Ingestion
+                    st.session_state.context = parser.parse_file(tmp_path)
+                    st.session_state.step = 1
+                    st.success("✅ File Parsed Successfully! No OCR required.")
                 except Exception as e:
-                    st.error(f"Error parsing file: {e}")
+                    st.error(f"❌ Error parsing file: {e}")
                 finally:
                     if os.path.exists(tmp_path):
                         os.unlink(tmp_path) # Clean up
@@ -165,7 +157,7 @@ if st.session_state.context:
                 st.success(f"Proposal Generated: {output_filename}")
 
 else:
-    st.info("Please upload a PDF in the sidebar to begin.")
+    st.info("Please upload a DOCX file in the sidebar to begin.")
 
 # --- FOOTER ---
 st.divider()

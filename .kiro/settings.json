@@ -1,0 +1,39 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};C:\\Users\\Ahmed\\AppData\\Roaming\\npm;C:\\Users\\Ahmed\\bin"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": ["${env:windir}\\System32\\cmd.exe"],
+      "icon": "terminal-cmd"
+    },
+    "Gemini CLI": {
+      "path": "cmd.exe",
+      "args": ["/k", "gemini"],
+      "icon": "sparkle",
+      "overrideName": true
+    },
+    "Qwen CLI": {
+      "path": "cmd.exe",
+      "args": ["/k", "qwen"],
+      "icon": "hubot",
+      "overrideName": true
+    },
+    "Droid (Factory)": {
+      "path": "C:\\Users\\Ahmed\\bin\\droid.exe",
+      "icon": "robot",
+      "overrideName": true
+    },
+    "OpenCode": {
+      "path": "cmd.exe",
+      "args": ["/k", "opencode"],
+      "icon": "code",
+      "overrideName": true
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}

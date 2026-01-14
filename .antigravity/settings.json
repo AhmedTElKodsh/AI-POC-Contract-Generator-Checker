@@ -1,0 +1,11 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "OpenCode": {
+            "path": "node",
+            "args": ["-e", "console.log('OpenCode terminal initialized')"],
+            "icon": "terminal",
+            "overrideName": true
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "OpenCode"
+}

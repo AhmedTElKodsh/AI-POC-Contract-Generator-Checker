@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "name": "Auto-Translate Localization Files",
+  "description": "Monitors changes to localization files (.json, .yaml, .yml, .properties, .strings, .xliff, .po) and automatically identifies new or modified text to generate translations for all configured target languages while maintaining proper context and locale-specific conventions.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/locales/**/*.json",
+      "**/i18n/**/*.json",
+      "**/translations/**/*.json",
+      "**/lang/**/*.json",
+      "**/*.locale.json",
+      "**/locales/**/*.yaml",
+      "**/locales/**/*.yml",
+      "**/i18n/**/*.yaml",
+      "**/i18n/**/*.yml",
+      "**/translations/**/*.yaml",
+      "**/translations/**/*.yml",
+      "**/*.strings",
+      "**/*.xliff",
+      "**/*.po"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A localization file has been modified. Please:\n\n1. **Identify Changes**: Analyze the file to detect new or modified text strings in the primary language.\n\n2. **Generate Translations**: For each new/modified string, generate accurate translations for all target languages configured in the project (common targets: es, fr, de, zh, ja, ar, pt, it, ko, ru).\n\n3. **Maintain Context**: Ensure translations:\n   - Preserve the original meaning and tone\n   - Handle placeholders/variables correctly (e.g., {name}, {{count}}, %s)\n   - Respect locale-specific conventions (date formats, number formats, pluralization rules)\n   - Account for text expansion/contraction in different languages\n\n4. **Update Translation Files**: Add the translations to the corresponding language files, maintaining consistent file structure and formatting.\n\n5. **Flag for Review**: Note any translations that may need human review due to ambiguity, cultural sensitivity, or technical terminology.\n\nPlease proceed with generating and applying the translations."
+  }
+}
